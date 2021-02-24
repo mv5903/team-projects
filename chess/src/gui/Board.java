@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Board extends JPanel {
-	JLabel[][] spaces = new JLabel[8][8];  //first box is numbers // second box is letter // Example jlabels[0][1] refers to the space b1.
+	public static JLabel[][] spaces = new JLabel[8][8];  //first box is numbers // second box is letter // Example jlabels[0][1] refers to the space b1.
 	Board() {
 		//Panel Containing all the spaces
 		setBounds(25,30,650,650);
