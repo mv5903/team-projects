@@ -12,7 +12,7 @@ public class Board extends JPanel {
 		setBackground(Color.BLACK);
 		setBorder(BorderFactory.createLineBorder(Color.WHITE,  10, true));
 		setLayout(new GridLayout(8,8,5,5));
-		
+		//hi
 		//Spaces
 		for (int i = 0; i < spaces.length; i++) {
 			for (int j = 0; j < spaces[i].length; j++) {
