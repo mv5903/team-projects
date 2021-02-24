@@ -1,5 +1,6 @@
 package network;
 
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -7,15 +8,14 @@ import java.net.UnknownHostException;
 
 public class Server extends Thread {
 	
-	private String servername, username;
-	private int port;
+	protected String servername, username;
+	protected int port;
 	
-	private ObjectInputStream dis;
-	private ObjectOutputStream dos;
-	private Socket client;
-	private Packet received;
+	protected ObjectInputStream input;
+	protected ObjectOutputStream output;
+	protected Socket client;
+	protected Packet received;
 	
-
 	/**
 	 * Constructs a new Server object, running on a separate thread
 	 * @param args 0: Host 1: Port 2: Username
@@ -30,6 +30,19 @@ public class Server extends Thread {
 		this.servername = servername;
 		this.port = port;
 		this.username = username;
+	}
+	
+	public void run() {
+		try {
+			client = new Socket(servername, port);
+			output = new ObjectOutputStream(client.getOutputStream());
+			output.flush();
+			input = new ObjectInputStream(client.getInputStream());
+			output.writeObject(new Packet("Init", "Init"));
+			new MessageListener().start();
+		} catch (IOException e) {
+			
+		}
 	}
 
 }
