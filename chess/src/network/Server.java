@@ -34,6 +34,7 @@ public class Server extends Thread {
 	
 	public void run() {
 		try {
+			
 			client = new Socket(servername, port);
 			output = new ObjectOutputStream(client.getOutputStream());
 			output.flush();
