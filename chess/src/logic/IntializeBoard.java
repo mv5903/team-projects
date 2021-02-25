@@ -63,8 +63,8 @@ public class IntializeBoard {
 			
 			Bishop b1 = new Bishop(true);
 			Bishop b2 = new Bishop(false);
-			rook.add(b1);
-			rook.add(b2);
+			bishop.add(b1);
+			bishop.add(b2);
 			
 		
 		}
