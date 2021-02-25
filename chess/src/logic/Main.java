@@ -21,9 +21,10 @@ public class Main {
 	
 	
 	
-	public static ArrayList<Rook> rook = new ArrayList<Rook>();
+	
 	
 	public static void main(String[] args) {
+		
 		
 		
 		JFrame testFrame = new JFrame();
@@ -43,7 +44,7 @@ public class Main {
 		testFrame.setVisible(true);
 		
 		
-		
+	
 		
 		
 	

@@ -17,18 +17,8 @@ import gui.Board;
 
 public class ChessGameCon extends JPanel {
 
-
-	public static ArrayList<Rook> rook = new ArrayList<Rook>();
 	
-	static ArrayList<Knight> knight = new ArrayList<Knight>();
-	
-	static ArrayList<Bishop> bishop = new ArrayList<Bishop>();
-	
-	static ArrayList<King> king = new ArrayList<King>();
-	
-	static ArrayList<Queen> queen = new ArrayList<Queen>();
-	
-	static ArrayList<Pawn> pawn = new ArrayList<Pawn>();
+	static ArrayList<Rook> Rook = new ArrayList<Rook>();
 	
 	public static JLabel[][] spaces = new JLabel[8][8];
 	
@@ -67,16 +57,15 @@ public class ChessGameCon extends JPanel {
 			
 		}
 		
+		Rook = IntializeBoard.rook;
+		IntializeBoard.createPieces();
+		
+		IntializeBoard.startingBoard();
+		
 
-		Rook r1 = new Rook(true);
-		Rook r2 = new Rook(false);
-		rook.add(r1);
-		rook.add(r2);
-		System.out.println(rook.get(1));
+	
 	
 		
-		Board.spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/"+rook.get(0).getColor()+" "+rook.get(0).getIcon()+".png").getImage()
-				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 		
 		
 		

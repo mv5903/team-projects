@@ -20,6 +20,7 @@ public class IntializeBoard {
 	static ArrayList<Pawn> pawn = new ArrayList<Pawn>();
 
 	public IntializeBoard() {
+		createPieces();
 		startingBoard();
 	}
 
@@ -30,7 +31,7 @@ public class IntializeBoard {
 		return Board.spaces[x][y];
 	}
 
-	public void startingBoard() {
+	public static void startingBoard() {
 		createPieces();
 		// white rooks
 		Board.spaces[0][0].setIcon(
@@ -111,7 +112,7 @@ public class IntializeBoard {
 
 	}
 
-	public void createPieces() {
+	public static void createPieces() {
 		for (int i = 0; i < 2; i++) {
 			Rook r1 = new Rook(true);
 			Rook r2 = new Rook(false);
