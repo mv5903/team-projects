@@ -8,19 +8,17 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class Server extends Thread implements Constants, Serializable {
+public class Server extends Listener implements Constants, Serializable {
 
 	private static final long serialVersionUID = -6963353887578937765L;
-	protected ObjectInputStream input;
-	protected ObjectOutputStream output;
 	protected ServerSocket socket;
 	protected Socket client;
-	protected Packet received;
 	
 	public static void main(String[] args) {
 		Server s = null;
 		try {
 			s = new Server();
+			s.start();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -42,56 +40,19 @@ public class Server extends Thread implements Constants, Serializable {
 	
 	public Server() throws Exception {
 		socket = new ServerSocket(PORT, 10);
-		client = socket.accept();
-		System.out.println("Player connected!");
-		input = new ObjectInputStream(client.getInputStream());
-		output = new ObjectOutputStream(client.getOutputStream());
-		output.flush();
-		sendPacket(new Packet("Init", "Init"));
 		new MessageListener().start();
 	}
 	
-	public void sendPacket(Packet p) {
+	public void run() {
 		try {
-			output.writeObject(p);
-		} catch (IOException e) {
-			e.printStackTrace();
+			client = socket.accept();
+			System.out.println("Player connected!");
+			input = new ObjectInputStream(client.getInputStream());
+			output = new ObjectOutputStream(client.getOutputStream());
+			output.flush();
+		} catch (Exception e) {
+			System.out.println("Something went wrong: \n" + e.getMessage());
 		}
 	}
-	
-	/**
-	 * If this method is called, it will wait to receive a packet with the specified
-	 * subject, then it will return it.
-	 * @param subject Packet subject to wait for.
-	 * @return Packet waited for.
-	 */
-	public Packet waitForPacket(String subject) {
-		while (true) {
-			Utilities.sleep();
-			if (received != null && received.getSubject().equals(subject)) {
-				Packet toReturn = received;
-				received = null;
-				return toReturn;
-			}
-		}
-	}
-	
-	/**
-	 * Constantly updates <strong>received</strong>.
-	 * @author matt
-	 *
-	 */
-	class MessageListener extends Thread {
-		public void run() {
-			try {
-				while (true) {
-					Utilities.sleep();
-					received = (Packet) input.readObject();
-				}
-			} catch (Exception e) {
-				System.err.println("Process ended unexpectedly.\n" + e);
-			}
-		}
-	}
-	
+
 }

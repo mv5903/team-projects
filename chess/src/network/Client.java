@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Client extends Thread implements Constants, Serializable {
+public class Client extends Listener implements Constants, Serializable {
 
 	private static final long serialVersionUID = 8062375744100123820L;
 	protected String servername, username;
@@ -56,50 +56,4 @@ public class Client extends Thread implements Constants, Serializable {
 			System.out.println("Couldn't create the socket. Check parameters and try again.");
 		}
 	}
-	/**
-	 * Send a message to the server player.
-	 * @param p
-	 */
-	public void sendPacket(Packet p) {
-		try {
-			output.writeObject(p);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Wait for a particular packet back from server player.
-	 * @return Packet waiting for
-	 */
-	public Packet waitForPacket(String subject) {
-		while (true) {
-			Utilities.sleep();
-			if (received != null && subject.equals(received.getSubject())) {
-				Packet toReturn = received;
-				received = null;
-				return toReturn;
-			}
-		}
-	}
-	
-	/**
-	 * On a seperate method, responsible for listening to packets sent from server.
-	 * Will constantly update <strong>received</strong> when a new Packet is received.
-	 * @author matt
-	 *
-	 */
-	class MessageListener extends Thread {
-		public void run() {
-			try {
-				while (true) {
-					Utilities.sleep();
-					received = (Packet) input.readObject();
-				}
-			} catch (Exception e) {
-				System.err.println("Process ended unexpectedly.\n" + e);
-			}
-		}
-	}
-
 }
