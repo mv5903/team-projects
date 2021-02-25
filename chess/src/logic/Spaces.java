@@ -1,8 +1,6 @@
 package logic;
 import javax.swing.JLabel;
 
-import gui.Board;
-
 public class Spaces {
 	private Piece piece;
 	private int x, y;

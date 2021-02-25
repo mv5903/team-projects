@@ -13,10 +13,9 @@ import javax.swing.JPanel;
 
 public class ChessGameCon extends JPanel {
 
+	private static final long serialVersionUID = 7786438962449382042L;
 	static King a = new King(false);
-
 	static Scanner scan = new Scanner(System.in);
-
 	public static JLabel[][] spaces = new JLabel[8][8];
 
 	public ChessGameCon() {
@@ -24,7 +23,6 @@ public class ChessGameCon extends JPanel {
 		setBackground(Color.BLACK);
 		setBorder(BorderFactory.createLineBorder(Color.WHITE, 10, true));
 		setLayout(new GridLayout(8, 8, 5, 5));
-		// hi
 		// Spaces
 		setBorder(BorderFactory.createLineBorder(Color.WHITE, 10, true));
 		setLayout(new GridLayout(8, 8, 5, 5));

@@ -13,15 +13,10 @@ public class IntializeBoard {
 	static Spaces[][] board;
 
 	static ArrayList<Rook> rook = new ArrayList<Rook>();
-
 	static ArrayList<Knight> knight = new ArrayList<Knight>();
-
 	static ArrayList<Bishop> bishop = new ArrayList<Bishop>();
-
 	static ArrayList<King> king = new ArrayList<King>();
-
 	static ArrayList<Queen> queen = new ArrayList<Queen>();
-
 	static ArrayList<Pawn> pawn = new ArrayList<Pawn>();
 
 	public IntializeBoard() {
@@ -36,13 +31,13 @@ public class IntializeBoard {
 	}
 
 	public void startingBoard() {
-
+		createPieces();
 		Board.spaces[0][0]
-				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook1.getColor() + " " + rook1.getIcon() + ".png")
+				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.get(0).getColor() + " " + rook.get(0).getIcon() + ".png")
 						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 		Board.spaces[0][1]
-				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.getColor() + " " + rook.getIcon() + ".png")
+				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.get(1).getColor() + " " + rook.get(1).getIcon() + ".png")
 						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 	}

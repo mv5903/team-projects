@@ -33,7 +33,7 @@ public class Server extends Listener implements Constants, Serializable {
 				System.out.println(s.waitForPacket("three"));
 			} catch (Exception e) {
 				e.printStackTrace();
-			};
+			}
 		}
 		
 	}

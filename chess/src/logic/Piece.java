@@ -1,37 +1,33 @@
 package logic;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-
 public abstract class Piece {
 
-	public String Icon;
-
-	public String Color;
-
-	public boolean isColor;
+	protected String icon, color;
+	protected boolean isColor;
 
 	public Piece(String Icon, boolean isColor) {
-
-		this.Icon = Icon;
-
+		this.icon = Icon;
 		this.isColor = isColor;
-		Color = isColor ? "White" : "Black";
+		color = isColor ? "White" : "Black";
 	}
 
 	public String getIcon() {
-		return Icon;
+		return icon;
 	}
 
 	public void setIcon(String icon) {
-		Icon = icon;
+		this.icon = icon;
 	}
 
 	public String getColor() {
-		return Color;
+		return color;
 	}
 
 	public void setColor(String color) {
-		Color = color;
+		this.color = color;
+	}
+	
+	public String toString() {
+		return icon;
 	}
 }
