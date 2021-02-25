@@ -11,7 +11,6 @@ public class Client extends Listener implements Constants, Serializable {
 
 	private static final long serialVersionUID = 8062375744100123820L;
 	protected String servername, username;
-	
 	protected ObjectInputStream input;
 	protected ObjectOutputStream output;
 	protected Socket client;
