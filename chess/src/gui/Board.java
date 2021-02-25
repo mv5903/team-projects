@@ -1,6 +1,8 @@
 package gui;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
@@ -10,7 +12,10 @@ public class Board extends JPanel {
 
 	public static JLabel[][] spaces = new JLabel[8][8]; // first box is numbers // second box is letter // Example
 														// jlabels[0][1] refers to the space b1.
-	boolean isWhite = true;
+	boolean isWhite = true, isFirstClick = true;
+	int a, b;
+	Color prevColor = null;
+	Icon icon = null;
 	// jlabels[0][1] refers to the space b1.
 
 	Board() {
@@ -28,12 +33,15 @@ public class Board extends JPanel {
 		int counter2 = 1;
 		for (int i = 0; i < spaces.length; i++) {
 			for (int j = 0; j < spaces[i].length; j++) {
+				int loop1 = i;
+				int loop2 = j;
 				spaces[i][j] = new JLabel();
 				spaces[i][j].setOpaque(true);
 				spaces[i][j].setForeground(Color.BLACK);
 				spaces[i][j].setFont(new Font("ComicSans", Font.PLAIN, 20));
 				spaces[i][j].setVerticalAlignment(JLabel.CENTER);
 				spaces[i][j].setHorizontalAlignment(JLabel.CENTER);
+
 				if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0) {
 					spaces[i][j].setBackground(new Color(245, 243, 155));
 				} else {
@@ -102,6 +110,47 @@ public class Board extends JPanel {
 //						spaces[i][j].setText(Integer.toString(counter2));
 //					}
 				}
+				spaces[i][j].addMouseListener(new MouseListener() {
+					
+
+					public void mouseClicked(MouseEvent e) {
+
+					}
+					//highlights current piece selected
+					public void mousePressed(MouseEvent e) {
+						if (!isFirstClick){
+							spaces[a][b].setBackground(prevColor);
+							//spaces[a][b].setIcon(null);
+							a = loop1;
+							b = loop2;
+							//spaces[loop1][loop2].setIcon(icon);
+							prevColor = spaces[loop1][loop2].getBackground();
+							//icon = spaces[loop1][loop2].getIcon();
+							spaces[loop1][loop2].setBackground(Color.CYAN);
+							
+						} else {
+							prevColor = spaces[loop1][loop2].getBackground();
+							//icon = spaces[loop1][loop2].getIcon();
+							a = loop1;
+							b = loop2;
+							spaces[loop1][loop2].setBackground(Color.CYAN);
+							isFirstClick = false;
+						}
+
+					}
+
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					public void mouseEntered(MouseEvent e) {
+						
+					}
+
+					public void mouseExited(MouseEvent e) {
+						
+					} 
+					
+				});
 
 				add(spaces[i][j]);
 			}
