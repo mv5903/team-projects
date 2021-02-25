@@ -1,8 +1,8 @@
 package logic;
 
 public abstract class Piece {
-	private boolean captured = false;
-	private boolean color = false;
+	protected boolean captured = false;
+	protected boolean color = false;
 	
 	public Piece(boolean color) {
 		this.setColor(color);
@@ -27,11 +27,6 @@ public abstract class Piece {
 		this.color = color;
 	}
 	
-	public abstract boolean canMove(ChessBoard chessBoard, Tile start, tile end) {
-		
-	}
-	
-	
-	
+	public abstract boolean canMove(ChessBoard chessBoard, Tile start, tile end);
 	
 }

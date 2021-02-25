@@ -5,6 +5,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Board extends JPanel {
+
+	private static final long serialVersionUID = 2540418403261986326L;
 	JLabel[][] spaces = new JLabel[8][8];  //first box is numbers // second box is letter // Example jlabels[0][1] refers to the space b1.
 	Board() {
 		//Panel Containing all the spaces
