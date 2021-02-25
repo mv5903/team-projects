@@ -4,43 +4,34 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public abstract class Piece {
-	private static ImageIcon Icon;
-	
-	private static ImageIcon Color;
-	
 
-	
-	public Piece(ImageIcon Icon, ImageIcon color) {
-		Piece.Icon = Icon;
-		
-		Piece.Color = color;
+	public String Icon;
+
+	public String Color;
+
+	public boolean isColor;
+
+	public Piece(String Icon, boolean isColor) {
+
+		this.Icon = Icon;
+
+		this.isColor = isColor;
+		Color = isColor ? "White" : "Black";
 	}
 
-
-
-	public static ImageIcon getIcon() {
+	public String getIcon() {
 		return Icon;
 	}
 
-
-
-	public static void setIcon(ImageIcon icon) {
+	public void setIcon(String icon) {
 		Icon = icon;
 	}
 
-
-
-	public static ImageIcon getColor() {
+	public String getColor() {
 		return Color;
 	}
 
-
-
-	public static void setColor(ImageIcon color) {
+	public void setColor(String color) {
 		Color = color;
 	}
-	
-	
-	
-	
 }
