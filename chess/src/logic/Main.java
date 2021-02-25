@@ -3,6 +3,7 @@ package logic;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -18,7 +19,9 @@ import gui.Board;
  */
 public class Main {
 	
-	static Rook b = new Rook(false);
+	
+	
+	public static ArrayList<Rook> rook = new ArrayList<Rook>();
 	
 	public static void main(String[] args) {
 		
@@ -38,6 +41,8 @@ public class Main {
 		testFrame.pack();
 		
 		testFrame.setVisible(true);
+		
+		
 		
 		
 		
