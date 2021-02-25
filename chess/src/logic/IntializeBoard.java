@@ -90,6 +90,15 @@ public class IntializeBoard {
 				new ImageIcon("Images/" + queen.get(1).getColor() + " " + queen.get(1).getIcon() + ".png").getImage()
 						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
+		// white king
+		Board.spaces[0][4].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + king.get(0).getColor() + " " + king.get(0).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		
+		// black king
+		Board.spaces[7][4].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + king.get(1).getColor() + " " + king.get(1).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 	}
 
 	public void createPieces() {
