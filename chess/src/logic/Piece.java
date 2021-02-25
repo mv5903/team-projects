@@ -3,11 +3,12 @@ package logic;
 public abstract class Piece {
 	
 	public String icon, color;
-	public boolean isColor;
+	public boolean isWhite;
 	
-	public Piece(String type, boolean isColor) {
-		this.isColor = isColor;
-		color = isColor ? "White": "Black";
+	public Piece(String type, boolean isWhite) {
+		this.isWhite = isWhite;
+		color = isWhite ? "White": "Black";
+		icon = type;
 	}
 
 	public String getIcon() {

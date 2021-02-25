@@ -56,12 +56,10 @@ public class ChessGameCon extends JPanel {
 			
 			
 		}
+	
 		
-		Rook = IntializeBoard.rook;
-		IntializeBoard.createPieces();
-		
-		IntializeBoard.startingBoard();
-		
+		spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/Black Rook.png").getImage()
+				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 	
 	
