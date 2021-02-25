@@ -101,7 +101,7 @@ public class IntializeBoard {
 						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 		// pawns
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i <= 7; i++) {
 			Board.spaces[1][i].setIcon(
 					new ImageIcon(new ImageIcon("Images/" + pawn.get(0).getColor() + " " + pawn.get(0).getIcon() + ".png")
 							.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
