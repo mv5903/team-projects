@@ -18,7 +18,11 @@ public class ChessGameCon extends JPanel {
 
 	static King a = new King(false);
 	
+<<<<<<< Updated upstream
 	static IntializeBoard b = new IntializeBoard();
+=======
+	static IntializeBoard t1 = new IntializeBoard();
+>>>>>>> Stashed changes
 	
 	static Scanner scan = new Scanner(System.in);
 	
@@ -62,6 +66,11 @@ public class ChessGameCon extends JPanel {
 	
 	IntializeBoard.createPieces(IntializeBoard.rook);
 		
+<<<<<<< Updated upstream
+=======
+	t1.createPieces();
+		
+>>>>>>> Stashed changes
 		Board.spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/"+IntializeBoard.rook.get(1).getColor()+" "+IntializeBoard.rook.get(1).getIcon()+".png").getImage()
 				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 		

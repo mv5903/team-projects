@@ -19,6 +19,15 @@ public class Rook extends Piece{
 		super(isColor);
 		
 		Icon = "Rook";
+<<<<<<< Updated upstream
+=======
+		
+		
+		
+		this.isColor = isColor;
+		Color = isColor ? "White": "Black";
+	
+>>>>>>> Stashed changes
 	}
 
 

@@ -13,6 +13,20 @@ public class King extends Piece{
 		super(isColor);
 		
 		Icon = "King";
+<<<<<<< Updated upstream
+=======
+		
+		
+		
+		this.isColor = isColor;
+		Color = isColor ? "White": "Black";
+
+	}
+
+	public void setIcon(String icon) {
+		
+		Icon = icon;
+>>>>>>> Stashed changes
 	}
 
 
