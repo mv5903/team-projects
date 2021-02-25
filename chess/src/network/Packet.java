@@ -1,6 +1,7 @@
 package network;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Packet implements Serializable {
 

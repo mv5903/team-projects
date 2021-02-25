@@ -6,6 +6,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Server extends Thread implements Constants, Serializable {
 
@@ -15,6 +16,29 @@ public class Server extends Thread implements Constants, Serializable {
 	protected ServerSocket socket;
 	protected Socket client;
 	protected Packet received;
+	
+	public static void main(String[] args) {
+		Server s = null;
+		try {
+			s = new Server();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			s.sendPacket(new Packet("sup", "just chillin"));
+			ArrayList<Integer> nums = new ArrayList<Integer>();
+			for (int i = 0; i < 5; i++) {
+				nums.add(i * 4);
+			}
+			try {
+				Utilities.sleep();
+				s.sendPacket(new Packet("second packet", nums));
+				System.out.println(s.waitForPacket("three"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			};
+		}
+		
+	}
 	
 	public Server() throws Exception {
 		socket = new ServerSocket(PORT, 10);

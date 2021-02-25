@@ -24,11 +24,19 @@ public class Client extends Thread implements Constants, Serializable {
 	 * @throws IllegalArgumentException If arguments are incorrectly passed in
 	 */
 	public static void main(String[] args) throws UnknownHostException, IllegalArgumentException {
+		/*
 		try {
 			new Client(args[0], args[1]).start();
 		} catch (NumberFormatException e) {
 			throw new IllegalArgumentException("Illegal Arguments");
 		}
+		*/
+		Client c = new Client("mattvandenberg.com", "matt");
+		c.start();
+		Utilities.sleep();
+		System.out.println(c.waitForPacket("sup"));
+		System.out.println(c.waitForPacket("second packet"));
+		c.sendPacket(new Packet("three", true));
 	}
 	
 	public Client(String servername, String username) {
