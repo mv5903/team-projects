@@ -49,20 +49,46 @@ public class IntializeBoard {
 						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 		// white knights
-		Board.spaces[0][1].setIcon(
-				new ImageIcon(new ImageIcon("Images/" + knight.get(0).getColor() + " " + knight.get(0).getIcon() + ".png")
-						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-		Board.spaces[0][6].setIcon(
-				new ImageIcon(new ImageIcon("Images/" + knight.get(0).getColor() + " " + knight.get(0).getIcon() + ".png")
-						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[0][1].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + knight.get(0).getColor() + " " + knight.get(0).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[0][6].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + knight.get(0).getColor() + " " + knight.get(0).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 		// black knights
-		Board.spaces[7][1].setIcon(
-				new ImageIcon(new ImageIcon("Images/" + knight.get(1).getColor() + " " + knight.get(1).getIcon() + ".png")
-						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-		Board.spaces[7][6].setIcon(
-				new ImageIcon(new ImageIcon("Images/" + knight.get(1).getColor() + " " + knight.get(1).getIcon() + ".png")
-						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[7][1].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + knight.get(1).getColor() + " " + knight.get(1).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[7][6].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + knight.get(1).getColor() + " " + knight.get(1).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
+		// white bishops
+		Board.spaces[0][2].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + bishop.get(0).getColor() + " " + bishop.get(0).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[0][5].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + bishop.get(0).getColor() + " " + bishop.get(0).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
+		// black bishops
+		Board.spaces[7][2].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + bishop.get(1).getColor() + " " + bishop.get(1).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[7][5].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + bishop.get(1).getColor() + " " + bishop.get(1).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
+		// white queen
+		Board.spaces[0][3].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + queen.get(0).getColor() + " " + queen.get(0).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		
+		// black queen
+		Board.spaces[7][3].setIcon(new ImageIcon(
+				new ImageIcon("Images/" + queen.get(1).getColor() + " " + queen.get(1).getIcon() + ".png").getImage()
+						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 	}
 
