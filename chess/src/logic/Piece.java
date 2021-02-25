@@ -11,9 +11,9 @@ public abstract class Piece {
 
 	public boolean isColor;
 	
-	public Piece(String Icon, String color, boolean isColor) {
+	public Piece(boolean isColor) {
 		
-		this.Icon = Icon;
+		
 		
 		this.isColor = isColor;
 		Color = isColor ? "White": "Black";

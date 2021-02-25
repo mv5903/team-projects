@@ -13,7 +13,7 @@ public class IntializeBoard {
 	static Spaces[][] board;
 	
 	
-	static ArrayList<Rook> rook = new ArrayList<Rook>();
+	public static ArrayList<Rook> rook = new ArrayList<Rook>();
 	
 	static ArrayList<Knight> knight = new ArrayList<Knight>();
 	
@@ -41,32 +41,36 @@ public class IntializeBoard {
 
 	public void startingBoard() {
 		
-		Board.spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/"+rook1.getColor()+" "+rook1.getIcon()+".png").getImage()
+		Board.spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/"+rook.get(1).getColor()+" "+rook.get(1).getIcon()+".png").getImage()
 				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 		
-		Board.spaces[0][1].setIcon(new ImageIcon(new ImageIcon("Images/"+rook.getColor()+" "+rook.getIcon()+".png").getImage()
-				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		
 	
 	}
 	
-	public void createPieces() {
-		for(int i = 0; i < 2; i++) {
+	public static void createPieces(ArrayList<Rook> input) {
+			
 			Rook r1 = new Rook(true);
 			Rook r2 = new Rook(false);
-			rook.add(r1);
-			rook.add(r2);
+			input.add(r1);
+			input.add(r2);
 			
-			Knight k1 = new Knight(true);
+			rook = input;
+			return input;
+			
+			/*Knight k1 = new Knight(true);
 			Knight k2 = new Knight(false);
 			knight.add(k1);
 			knight.add(k2);
 			
 			Bishop b1 = new Bishop(true);
 			Bishop b2 = new Bishop(false);
-			rook.add(b1);
-			rook.add(b2);
-			
+			bishop.add(b1);
+			bishop.add(b2);
+			return rook2;
+			*/
 		
 		}
 	}
-}
+
+

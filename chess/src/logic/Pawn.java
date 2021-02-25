@@ -2,7 +2,7 @@ package logic;
 
 import javax.swing.JLabel;
 
-public class Pawn {
+public class Pawn extends Piece{
 	
 	public String Icon;
 
@@ -11,39 +11,10 @@ public class Pawn {
 	public boolean isColor;
 
 	 public Pawn(boolean isColor) {
-
-		
-		Icon = "Pawn";
-		
-		
-		
-		this.isColor = isColor;
-		
-		if(this.isColor == true) {
-			Color = "White";
+		 super(isColor);
 			
-		}else {
-			Color = "Black";
-		}
+			Icon = "Pawn";
 
-	}
-
-	public void setIcon(String icon) {
-		
-		Icon = icon;
-	}
-
-	public void setColor(String color) {
-		
-		Color = color;
-	}
-
-	public String getIcon() {
-		return Icon;
-	}
-
-	public String getColor() {
-		return Color;
 	}
 
 

@@ -11,10 +11,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import gui.Board;
+
 
 public class ChessGameCon extends JPanel {
 
 	static King a = new King(false);
+	
+	static IntializeBoard b = new IntializeBoard();
 	
 	static Scanner scan = new Scanner(System.in);
 	
@@ -55,12 +59,11 @@ public class ChessGameCon extends JPanel {
 			
 		}
 		
+	
+	IntializeBoard.createPieces(IntializeBoard.rook);
 		
-		
-		
-		spaces[1][2].setIcon(new ImageIcon(new ImageIcon("Images/"+a.getColor()+" "+a.getIcon()+".png").getImage()
+		Board.spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/"+IntializeBoard.rook.get(1).getColor()+" "+IntializeBoard.rook.get(1).getIcon()+".png").getImage()
 				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-				
 		
 		
 		
