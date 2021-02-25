@@ -10,8 +10,8 @@ public class Pawn extends Piece {
 
 	public boolean isColor;
 
-	public Pawn(String color, boolean isColor) {
-		super("Pawn", color, isColor);
+	public Pawn(boolean isColor) {
+		super("Pawn", isColor);
 	}
 
 	public String toString() {

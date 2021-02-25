@@ -9,8 +9,8 @@ public class King extends Piece {
 
 	public boolean isColor;
 
-	public King(String color, boolean isColor) {
-		super("King", color, isColor);
+	public King(boolean isColor) {
+		super("King", isColor);
 	}
 
 	public String toString() {

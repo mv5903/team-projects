@@ -10,8 +10,8 @@ public class Queen extends Piece {
 
 	public boolean isColor;
 
-	public Queen(String color, boolean isColor) {
-		super("Queen", color, isColor);
+	public Queen(boolean isColor) {
+		super("Queen", isColor);
 	}
 
 	public String toString() {

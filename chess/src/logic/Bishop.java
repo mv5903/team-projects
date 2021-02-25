@@ -10,8 +10,8 @@ public class Bishop extends Piece {
 
 	public boolean isColor;
 
-	public Bishop(String color, boolean isColor) {
-		super("Bishop", color, isColor);
+	public Bishop(boolean isColor) {
+		super("Bishop", isColor);
 	}
 
 	public String toString() {

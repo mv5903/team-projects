@@ -11,15 +11,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 public class ChessGameCon extends JPanel {
 
 	static King a = new King(false);
-	
+
 	static Scanner scan = new Scanner(System.in);
-	
+
 	public static JLabel[][] spaces = new JLabel[8][8];
-	
+
 	public ChessGameCon() {
 		setBounds(25, 30, 650, 650);
 		setBackground(Color.BLACK);
@@ -30,7 +29,7 @@ public class ChessGameCon extends JPanel {
 		setBorder(BorderFactory.createLineBorder(Color.WHITE, 10, true));
 		setLayout(new GridLayout(8, 8, 5, 5));
 		// Spaces
-	
+
 		for (int i = 0; i < spaces.length; i++) {
 			for (int j = 0; j < spaces[i].length; j++) {
 				spaces[i][j] = new JLabel();
@@ -44,26 +43,14 @@ public class ChessGameCon extends JPanel {
 				} else {
 					spaces[i][j].setBackground(new Color(168, 94, 60));
 				}
-				
-				
-				
-				
-				
+
 				add(spaces[i][j]);
 			}
-			
-			
+
 		}
-		
-		
-		
-		
-		spaces[1][2].setIcon(new ImageIcon(new ImageIcon("Images/"+a.getColor()+" "+a.getIcon()+".png").getImage()
-				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-				
-		
-		
-		
-		
+
+		spaces[1][2].setIcon(new ImageIcon(new ImageIcon("Images/" + a.getColor() + " " + a.getIcon() + ".png")
+				.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
 	}
 }

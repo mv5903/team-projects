@@ -11,7 +11,7 @@ public abstract class Piece {
 
 	public boolean isColor;
 
-	public Piece(String Icon, String color, boolean isColor) {
+	public Piece(String Icon, boolean isColor) {
 
 		this.Icon = Icon;
 

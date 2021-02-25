@@ -10,8 +10,8 @@ public class Knight extends Piece {
 
 	public boolean isColor;
 
-	public Knight(String color, boolean isColor) {
-		super("Knight", color, isColor);
+	public Knight(boolean isColor) {
+		super("Knight", isColor);
 	}
 
 	public String toString() {
