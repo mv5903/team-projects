@@ -48,20 +48,14 @@ public class IntializeBoard {
 	
 	}
 	
-<<<<<<< Updated upstream
 	public static void createPieces(ArrayList<Rook> input) {
 			
-=======
-	public void createPieces() {
-	
->>>>>>> Stashed changes
 			Rook r1 = new Rook(true);
 			Rook r2 = new Rook(false);
 			input.add(r1);
 			input.add(r2);
 			
-			rook = input;
-			return input;
+			
 			
 			/*Knight k1 = new Knight(true);
 			Knight k2 = new Knight(false);
@@ -72,12 +66,8 @@ public class IntializeBoard {
 			Bishop b2 = new Bishop(false);
 			bishop.add(b1);
 			bishop.add(b2);
-<<<<<<< Updated upstream
 			return rook2;
 			*/
-=======
-			
->>>>>>> Stashed changes
 		
 		}
 	}

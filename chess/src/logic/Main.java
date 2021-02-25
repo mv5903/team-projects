@@ -23,21 +23,21 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		JFrame jew = new JFrame();
-		jew.setMinimumSize(new Dimension(1200, 750));
-		jew.getContentPane().setBackground(Color.BLACK);
-		jew.setTitle("Chess");
-		jew.setLocationRelativeTo(null);
-		jew.setLayout(null);
-		jew.setResizable(false);
+		JFrame testFrame = new JFrame();
+		testFrame.setMinimumSize(new Dimension(1200, 750));
+		testFrame.getContentPane().setBackground(Color.BLACK);
+		testFrame.setTitle("Chess");
+		testFrame.setLocationRelativeTo(null);
+		testFrame.setLayout(null);
+		testFrame.setResizable(false);
 		
 		ChessGameCon a = new ChessGameCon();
 		
-		jew.add(a);
+		testFrame.add(a);
 		
-		jew.pack();
+		testFrame.pack();
 		
-		jew.setVisible(true);
+		testFrame.setVisible(true);
 		
 		
 		
