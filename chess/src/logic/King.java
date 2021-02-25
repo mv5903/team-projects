@@ -1,9 +1,11 @@
 package logic;
 
-public class King extends Piece{
+import javax.swing.JLabel;
+
+public  class King extends Piece{
 	private boolean castlingStatus = false;
-	
-	public King(boolean color) {
+	private JLabel King;
+	public King(boolean color, JLabel King) {
 		super(color);
 		// TODO Auto-generated constructor stub
 	}
@@ -17,11 +19,6 @@ public class King extends Piece{
 	}
 	
 	
-	public boolean canMove () {
-		//A chess piece can't move if there is another piece of the same type
-		
-		
-	}
 	
 	private boolean validCastling (ChessBoard chessBoard, Tile start, tile end) {
 		
@@ -31,7 +28,22 @@ public class King extends Piece{
 		}
 	}
 	//Available 
-	public boolean isCastlingAvailable(Tile start, Tile end) {
+	public boolean isCastlingAvailable(Spaces start, Spaces end) {
 		//Validates if the king can castle with the starting and ending positions
 	}
+
+	@Override
+	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
+		// TODO Auto-generated method stub
+		if( end.getPiece().isColor() == this.isColor()) {
+			return false;
+		}
+		
+		int x = Math.abs(start.getX() - end.getX());
+		
+		int y = Math.abs(start.getY()) - end.getY();
+		
+		return x*y == 2;
+	}
+
 }
