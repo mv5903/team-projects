@@ -2,54 +2,20 @@ package logic;
 
 import javax.swing.JLabel;
 
-public  class Queen {
-	
-	
-public String Icon;
+public class Queen extends Piece {
 
-public String Color;
+	public String Icon;
 
-public boolean isColor;
+	public String Color;
 
- public Queen(boolean isColor) {
+	public boolean isColor;
 
-	
-	Icon = "Queen";
-	
-	
-	
-	this.isColor = isColor;
-	
-	if(this.isColor == true) {
-		Color = "White";
-		
-	}else {
-		Color = "Black";
+	public Queen(String color, boolean isColor) {		
+		super("Queen", color, isColor);
 	}
 
-}
 
-public void setIcon(String icon) {
-	
-	Icon = icon;
-}
-
-public void setColor(String color) {
-	
-	Color = color;
-}
-
-public String getIcon() {
-	return Icon;
-}
-
-public String getColor() {
-	return Color;
-}
-
-
-
-public String toString() {
-	return Icon;
-}
+	public String toString() {
+		return Icon;
+	}
 }

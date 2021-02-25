@@ -7,71 +7,21 @@ import javax.swing.JLabel;
 
 import gui.Board;
 
-
-public class Rook  {
+public class Rook extends Piece{
 
 	public String Icon;
-	
+
 	public String Color;
-	
+
 	public boolean isColor;
 
-	 public Rook(boolean isColor) {
-	
-		
-		Icon = "Rook";
-		
-		
-		
-		this.isColor = isColor;
-		
-		if(this.isColor == true) {
-			Color = "White";
-			
-		}else {
-			Color = "Black";
-		}
-	
+	public Rook(String color, boolean isColor) {		
+		super("Rook", color, isColor);
 	}
 
-	public void setIcon(String icon) {
-		
-		Icon = icon;
-	}
 
-	public void setColor(String color) {
-		
-		Color = color;
-	}
-
-	public String getIcon() {
-		return Icon;
-	}
-
-	public String getColor() {
-		return Color;
-	}
-	
-	
-	
 	public String toString() {
 		return Icon;
 	}
 
-	
-
-
-
-	 
-
-	
-
-	 
-
-
-
-
-
-
-	
 }
