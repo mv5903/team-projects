@@ -1,8 +1,9 @@
 package logic;
 
+import javax.swing.JLabel;
+
 public abstract class Piece {
-	private boolean captured = false;
-	private boolean color = false;
+	private boolean captured = false, color = false;
 	
 	public Piece(boolean color) {
 		this.setColor(color);
@@ -27,11 +28,7 @@ public abstract class Piece {
 		this.color = color;
 	}
 	
-	public abstract boolean canMove(ChessBoard chessBoard, Tile start, tile end) {
-		
-	}
-	
-	
-	
+	public abstract boolean canMove(JLabel chessBoard, Spaces start, Spaces end);
+
 	
 }

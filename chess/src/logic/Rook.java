@@ -1,16 +1,34 @@
 package logic;
 
-public abstract class Rook extends Piece {
+import javax.swing.JLabel;
 
-	public Rook(boolean color) {
+import gui.Board;
+
+
+public class Rook extends Piece {
+
+	private JLabel Rook;
+
+	public Rook(boolean color, JLabel Rook) {
 		super(color);
-		// TODO Auto-generated constructor stub
+		this.Rook = Rook; 
 	}
 
-	@Override
-	public boolean canMove(ChessBoard chessBoard, Tile start, tile end) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
+		if (end.getPiece().isColor() == this.isColor()) {
+			return false;
+		}	
+		int x = Math.abs(start.getX() - end.getX());
+		int y = Math.abs(start.getY()) - end.getY();
+		return x*y == 2;
+	}
+	
+	public JLabel getRook() {
+		return Rook;
 	}
 
+	public void setRook(JLabel rook) {
+		Rook = rook;
+	}
+	
 }

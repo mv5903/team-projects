@@ -1,19 +1,38 @@
 package logic;
 
-public abstract class Knight extends Piece {
+import javax.swing.JLabel;
+
+public  class Knight extends Piece {
 	
-	public Knight(boolean color) {
+	private JLabel Knight;
+	
+	
+	public Knight(boolean color, JLabel Knight) {
 		super(color);
-		
-	}
-	
-	public boolean canMove (ChessBoard chessBoard, Tile Start, Tile End) {
-		
+		this.Knight = Knight;
 	}
 
-	@Override
-	public boolean canMove(ChessBoard chessBoard, Tile start, tile end) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
+		if( end.getPiece().isColor() == this.isColor()) {
+			return false;
+		}
+		int x = Math.abs(start.getX() - end.getX());
+		int y = Math.abs(start.getY()) - end.getY();
+		return x*y == 2;
 	}
+
+
+	public JLabel getKnight() {
+		return Knight;
+	}
+
+
+	public void setKnight(JLabel knight) {
+		Knight = knight;
+	}
+	
+	
+
 }
+	
+	
