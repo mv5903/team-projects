@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 import logic.Rook;
-import logic.Rook;
+
 public class Board extends JPanel {
 
 	public static JLabel[][] spaces = new JLabel[8][8]; // first box is numbers // second box is letter // Example

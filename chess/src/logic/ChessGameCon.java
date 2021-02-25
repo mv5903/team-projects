@@ -18,48 +18,34 @@ import gui.Board;
 public class ChessGameCon extends JPanel {
 
 	
-	static ArrayList<Rook> Rook = new ArrayList<Rook>();
-	
-	public static JLabel[][] spaces = new JLabel[8][8];
-	
 	public ChessGameCon() {
 		setBounds(25, 30, 650, 650);
 		setBackground(Color.BLACK);
 		setBorder(BorderFactory.createLineBorder(Color.WHITE, 10, true));
 		setLayout(new GridLayout(8, 8, 5, 5));
-		// hi
-		// Spaces
-		setBorder(BorderFactory.createLineBorder(Color.WHITE, 10, true));
-		setLayout(new GridLayout(8, 8, 5, 5));
 		// Spaces
 	
-		for (int i = 0; i < spaces.length; i++) {
-			for (int j = 0; j < spaces[i].length; j++) {
-				spaces[i][j] = new JLabel();
-				spaces[i][j].setOpaque(true);
-				spaces[i][j].setForeground(Color.BLACK);
-				spaces[i][j].setFont(new Font("ComicSans", Font.PLAIN, 20));
-				spaces[i][j].setVerticalAlignment(JLabel.CENTER);
-				spaces[i][j].setHorizontalAlignment(JLabel.CENTER);
+		for (int i = 0; i < Board.spaces.length; i++) {
+			for (int j = 0; j < Board.spaces[i].length; j++) {
+				Board.spaces[i][j] = new JLabel();
+				Board.spaces[i][j].setOpaque(true);
+				Board.spaces[i][j].setForeground(Color.BLACK);
+				Board.spaces[i][j].setFont(new Font("ComicSans", Font.PLAIN, 20));
+				Board.spaces[i][j].setVerticalAlignment(JLabel.CENTER);
+				Board.spaces[i][j].setHorizontalAlignment(JLabel.CENTER);
 				if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0) {
-					spaces[i][j].setBackground(new Color(245, 243, 155));
+					Board.spaces[i][j].setBackground(new Color(245, 243, 155));
 				} else {
-					spaces[i][j].setBackground(new Color(168, 94, 60));
+					Board.spaces[i][j].setBackground(new Color(168, 94, 60));
 				}
-				
-				
-				
-				
-				
-				add(spaces[i][j]);
+		
+				add(Board.spaces[i][j]);
 			}
 			
 			
 		}
 	
-		
-		spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/Black Rook.png").getImage()
-				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		IntializeBoard.startingBoard();
 
 	
 	
