@@ -1,18 +1,7 @@
 package logic;
 
-import javax.swing.JLabel;
-
 public class Bishop extends Piece {
-	
 	public Bishop(boolean isColor) {		
-		super(isColor);
-		
-		Icon = "Bishop";
+		super("Bishop", isColor);
 	}
-
-
-	public String toString() {
-		return Icon;
-	}
-
 }
