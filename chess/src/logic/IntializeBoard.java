@@ -81,24 +81,35 @@ public class IntializeBoard {
 						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 		// white queen
-		Board.spaces[0][3].setIcon(new ImageIcon(
-				new ImageIcon("Images/" + queen.get(0).getColor() + " " + queen.get(0).getIcon() + ".png").getImage()
-						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-		
+		Board.spaces[0][3].setIcon(
+				new ImageIcon(new ImageIcon("Images/" + queen.get(0).getColor() + " " + queen.get(0).getIcon() + ".png")
+						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
 		// black queen
-		Board.spaces[7][3].setIcon(new ImageIcon(
-				new ImageIcon("Images/" + queen.get(1).getColor() + " " + queen.get(1).getIcon() + ".png").getImage()
-						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[7][3].setIcon(
+				new ImageIcon(new ImageIcon("Images/" + queen.get(1).getColor() + " " + queen.get(1).getIcon() + ".png")
+						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
 
 		// white king
-		Board.spaces[0][4].setIcon(new ImageIcon(
-				new ImageIcon("Images/" + king.get(0).getColor() + " " + king.get(0).getIcon() + ".png").getImage()
-						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-		
+		Board.spaces[0][4].setIcon(
+				new ImageIcon(new ImageIcon("Images/" + king.get(0).getColor() + " " + king.get(0).getIcon() + ".png")
+						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
 		// black king
-		Board.spaces[7][4].setIcon(new ImageIcon(
-				new ImageIcon("Images/" + king.get(1).getColor() + " " + king.get(1).getIcon() + ".png").getImage()
-						.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[7][4].setIcon(
+				new ImageIcon(new ImageIcon("Images/" + king.get(1).getColor() + " " + king.get(1).getIcon() + ".png")
+						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+
+		// pawns
+		for (int i = 0; i < 7; i++) {
+			Board.spaces[1][i].setIcon(
+					new ImageIcon(new ImageIcon("Images/" + pawn.get(0).getColor() + " " + pawn.get(0).getIcon() + ".png")
+							.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+			Board.spaces[6][i].setIcon(
+					new ImageIcon(new ImageIcon("Images/" + pawn.get(1).getColor() + " " + pawn.get(1).getIcon() + ".png")
+							.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		}
+
 	}
 
 	public void createPieces() {
