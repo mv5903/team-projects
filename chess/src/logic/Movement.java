@@ -1,5 +1,6 @@
 package logic;
 
+
 public class Movement {
 	private Player player;
 	private Piece pieceCaptured;
@@ -12,7 +13,7 @@ public class Movement {
 	
 	
 	public Movement (Player player, Spaces start, Spaces end) {
-		this.player player;
+		this.player = player;
 		
 		this.start = start;
 		
