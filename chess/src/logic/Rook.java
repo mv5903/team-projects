@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 
 import gui.Board;
 
-public class Rook extends Piece{
+public class Rook extends Piece {
 
 	public String Icon;
 
@@ -15,10 +15,9 @@ public class Rook extends Piece{
 
 	public boolean isColor;
 
-	public Rook(String color, boolean isColor) {		
+	public Rook(String color, boolean isColor) {
 		super("Rook", color, isColor);
 	}
-
 
 	public String toString() {
 		return Icon;

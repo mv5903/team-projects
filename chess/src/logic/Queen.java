@@ -10,10 +10,9 @@ public class Queen extends Piece {
 
 	public boolean isColor;
 
-	public Queen(String color, boolean isColor) {		
+	public Queen(String color, boolean isColor) {
 		super("Queen", color, isColor);
 	}
-
 
 	public String toString() {
 		return Icon;
