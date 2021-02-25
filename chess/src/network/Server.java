@@ -3,46 +3,55 @@ package network;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
+import java.util.ArrayList;
 
-public class Server extends Thread {
-	
-	protected String servername, username;
-	protected int port;
-	
-	protected ObjectInputStream input;
-	protected ObjectOutputStream output;
+public class Server extends Listener implements Constants, Serializable {
+
+	private static final long serialVersionUID = -6963353887578937765L;
+	protected ServerSocket socket;
 	protected Socket client;
-	protected Packet received;
 	
-	/**
-	 * Constructs a new Server object, running on a separate thread
-	 * @param args 0: Host 1: Port 2: Username
-	 * @throws UnknownHostException If a host is not running a server
-	 * @throws IllegalArgumentException If arguments are incorrectly passed in
-	 */
-	public static void main(String[] args) throws UnknownHostException, IllegalArgumentException {
-		new Server(args[0], Integer.parseInt(args[1]), args[2]).start();
+	public static void main(String[] args) {
+		Server s = null;
+		try {
+			s = new Server();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			s.start();
+			s.sendPacket(new Packet("sup", "just chillin"));
+			ArrayList<Integer> nums = new ArrayList<Integer>();
+			for (int i = 0; i < 5; i++) {
+				nums.add(i * 4);
+			}
+			try {
+				Utilities.sleep();
+				s.sendPacket(new Packet("second packet", nums));
+				System.out.println(s.waitForPacket("three"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			};
+		}
+		
 	}
 	
-	public Server(String servername, int port, String username) {
-		this.servername = servername;
-		this.port = port;
-		this.username = username;
+	public Server() throws Exception {
+		socket = new ServerSocket(PORT, 10);
+		new MessageListener().start();
 	}
 	
 	public void run() {
 		try {
-			
-			client = new Socket(servername, port);
+			client = socket.accept();
+			System.out.println("Player connected!");
+			input = new ObjectInputStream(client.getInputStream());
 			output = new ObjectOutputStream(client.getOutputStream());
 			output.flush();
-			input = new ObjectInputStream(client.getInputStream());
-			output.writeObject(new Packet("Init", "Init"));
-			new MessageListener().start();
-		} catch (IOException e) {
-			
+		} catch (Exception e) {
+			System.out.println("Something went wrong: \n" + e.getMessage());
 		}
 	}
 
