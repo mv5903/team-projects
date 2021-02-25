@@ -32,13 +32,22 @@ public class IntializeBoard {
 
 	public void startingBoard() {
 		createPieces();
+		//white rooks
 		Board.spaces[0][0]
 				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.get(0).getColor() + " " + rook.get(0).getIcon() + ".png")
 						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
-
-		Board.spaces[0][1]
+		Board.spaces[0][7]
+				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.get(0).getColor() + " " + rook.get(0).getIcon() + ".png")
+						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		
+		//black rooks
+		Board.spaces[7][0]
 				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.get(1).getColor() + " " + rook.get(1).getIcon() + ".png")
 						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		Board.spaces[7][7]
+				.setIcon(new ImageIcon(new ImageIcon("Images/" + rook.get(1).getColor() + " " + rook.get(1).getIcon() + ".png")
+						.getImage().getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		
 
 	}
 
