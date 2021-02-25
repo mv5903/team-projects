@@ -10,7 +10,7 @@ public  class King extends Piece{
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isCastlingStatus() {
+	public boolean getCastlingStatus() {
 		return castlingStatus;
 	}
 
@@ -18,31 +18,24 @@ public  class King extends Piece{
 		this.castlingStatus = castlingStatus;
 	}
 	
-	
-	
-	private boolean validCastling (ChessBoard chessBoard, Tile start, tile end) {
+	private boolean validCastling(ChessBoard chessBoard, Tile start, tile end) {
 		
 		
-		if(this.isCastlingStatus()) {
+		if (isCastlingStatus()) {
 			return false;
 		}
 	}
 	//Available 
-	public boolean isCastlingAvailable(Spaces start, Spaces end) {
+	public boolean canCastle(Spaces start, Spaces end) {
 		//Validates if the king can castle with the starting and ending positions
 	}
 
-	@Override
 	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		// TODO Auto-generated method stub
-		if( end.getPiece().isColor() == this.isColor()) {
+		if (end.getPiece().isColor() == this.isColor()) {
 			return false;
 		}
-		
 		int x = Math.abs(start.getX() - end.getX());
-		
 		int y = Math.abs(start.getY()) - end.getY();
-		
 		return x*y == 2;
 	}
 

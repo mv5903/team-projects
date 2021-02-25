@@ -12,18 +12,12 @@ public  class Knight extends Piece {
 		this.Knight = Knight;
 	}
 
-	
-	@Override
 	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		// TODO Auto-generated method stub
 		if( end.getPiece().isColor() == this.isColor()) {
 			return false;
 		}
-		
 		int x = Math.abs(start.getX() - end.getX());
-		
 		int y = Math.abs(start.getY()) - end.getY();
-		
 		return x*y == 2;
 	}
 

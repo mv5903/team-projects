@@ -3,8 +3,7 @@ package logic;
 import javax.swing.JLabel;
 
 public abstract class Piece {
-	private boolean captured = false;
-	private boolean color = false;
+	private boolean captured = false, color = false;
 	
 	public Piece(boolean color) {
 		this.setColor(color);
@@ -30,8 +29,6 @@ public abstract class Piece {
 	}
 	
 	public abstract boolean canMove(JLabel chessBoard, Spaces start, Spaces end);
-	
-	
-	
+
 	
 }

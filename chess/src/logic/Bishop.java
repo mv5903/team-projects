@@ -2,7 +2,7 @@ package logic;
 
 import javax.swing.JLabel;
 
-public  class Bishop extends Piece{
+public  class Bishop extends Piece {
 
 	
 	private JLabel Bishop;
@@ -19,11 +19,8 @@ public  class Bishop extends Piece{
 		if( end.getPiece().isColor() == this.isColor()) {
 			return false;
 		}
-		
 		int x = Math.abs(start.getX() - end.getX());
-		
 		int y = Math.abs(start.getY()) - end.getY();
-		
 		return x*y == 2;
 	}
 

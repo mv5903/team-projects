@@ -9,20 +9,14 @@ public  class Queen extends Piece{
 	public Queen (boolean color, JLabel Queen) {
 		super(color);
 		this.Queen = Queen;
-		
 	}
-	
-	@Override
+
 	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		// TODO Auto-generated method stub
 		if( end.getPiece().isColor() == this.isColor()) {
 			return false;
-		}
-		
-		int x = Math.abs(start.getX() - end.getX());
-		
+		}	
+		int x = Math.abs(start.getX() - end.getX());	
 		int y = Math.abs(start.getY()) - end.getY();
-		
 		return x*y == 2;
 	}
 
@@ -33,6 +27,4 @@ public  class Queen extends Piece{
 	public void setQueen(JLabel queen) {
 		Queen = queen;
 	}
-	
-	
 }

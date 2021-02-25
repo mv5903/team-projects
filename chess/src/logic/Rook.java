@@ -8,26 +8,18 @@ import gui.Board;
 public class Rook extends Piece {
 
 	private JLabel Rook;
-	
-	
 
 	public Rook(boolean color, JLabel Rook) {
 		super(color);
 		this.Rook = Rook; 
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		// TODO Auto-generated method stub
-		if( end.getPiece().isColor() == this.isColor()) {
+		if (end.getPiece().isColor() == this.isColor()) {
 			return false;
-		}
-		
+		}	
 		int x = Math.abs(start.getX() - end.getX());
-		
 		int y = Math.abs(start.getY()) - end.getY();
-		
 		return x*y == 2;
 	}
 	
@@ -39,7 +31,4 @@ public class Rook extends Piece {
 		Rook = rook;
 	}
 	
-	
-
-
 }

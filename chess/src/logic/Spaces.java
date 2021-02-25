@@ -5,22 +5,14 @@ import gui.Board;
 
 public class Spaces {
 	private Piece piece;
-	
-	private int x;
-	
-	private int y;
-	
+	private int x, y;
 	private JLabel input;
 	
 		public Spaces(int x, int y, JLabel input, Piece piece) {
 			this.setX(x);
 			this.setY(y);
 			this.setPiece(piece);
-		
-			
 		}
-
-		
 
 		public Piece getPiece() {
 			return this.piece;
@@ -53,9 +45,5 @@ public class Spaces {
 		public void setInput(JLabel input) {
 			this.input = input;
 		}
-		
-		
-		
-		
 		
 }
