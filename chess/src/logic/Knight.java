@@ -2,36 +2,55 @@ package logic;
 
 import javax.swing.JLabel;
 
-public  class Knight extends Piece {
+public  class Knight {
 	
-	private JLabel Knight;
-	
-	
-	public Knight(boolean color, JLabel Knight) {
-		super(color);
-		this.Knight = Knight;
-	}
+	public String Icon;
 
-	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		if( end.getPiece().isColor() == this.isColor()) {
-			return false;
+	public String Color;
+
+	public boolean isColor;
+
+	 public Knight(boolean isColor) {
+
+		
+		Icon = "Knight";
+		
+		
+		
+		this.isColor = isColor;
+		
+		if(this.isColor == true) {
+			Color = "White";
+			
+		}else {
+			Color = "Black";
 		}
-		int x = Math.abs(start.getX() - end.getX());
-		int y = Math.abs(start.getY()) - end.getY();
-		return x*y == 2;
+
+	}
+
+	public void setIcon(String icon) {
+		
+		Icon = icon;
+	}
+
+	public void setColor(String color) {
+		
+		Color = color;
+	}
+
+	public String getIcon() {
+		return Icon;
+	}
+
+	public String getColor() {
+		return Color;
 	}
 
 
-	public JLabel getKnight() {
-		return Knight;
-	}
 
-
-	public void setKnight(JLabel knight) {
-		Knight = knight;
+	public String toString() {
+		return Icon;
 	}
-	
-	
 
 }
 	

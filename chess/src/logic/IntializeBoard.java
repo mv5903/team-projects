@@ -1,5 +1,9 @@
 package logic;
 
+import java.awt.Image;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import gui.Board;
@@ -7,7 +11,23 @@ import gui.Board;
 public class IntializeBoard {
 
 	static Spaces[][] board;
-
+	
+	
+	static ArrayList<Rook> rook = new ArrayList<Rook>();
+	
+	static ArrayList<Knight> knight = new ArrayList<Knight>();
+	
+	static ArrayList<Bishop> bishop = new ArrayList<Bishop>();
+	
+	static ArrayList<King> king = new ArrayList<King>();
+	
+	static ArrayList<Queen> queen = new ArrayList<Queen>();
+	
+	static ArrayList<Pawn> pawn = new ArrayList<Pawn>();
+	
+	
+	
+	
 	public IntializeBoard() {
 		startingBoard();
 	}
@@ -20,46 +40,33 @@ public class IntializeBoard {
 	}
 
 	public void startingBoard() {
-
-		// Initialize white heros
-		board[0][0] = new Spaces(0, 0, Board.spaces[0][0], new Rook(true, null));
-		board[0][0] = new Spaces(0, 1, Board.spaces[0][1], new Knight(true, null));
-		board[0][0] = new Spaces(0, 2, Board.spaces[0][2], new Bishop(true, null));
-		board[0][0] = new Spaces(0, 3, Board.spaces[0][3], new King(true, null));
-		board[0][0] = new Spaces(0, 4, Board.spaces[0][4], new Queen(true, null));
-		board[0][0] = new Spaces(0, 5, Board.spaces[0][5], new Bishop(true, null));
-		board[0][0] = new Spaces(0, 6, Board.spaces[0][6], new Knight(true, null));
-		board[0][0] = new Spaces(0, 7, Board.spaces[0][7], new Rook(true, null));
-
-		// Initialize white Pawns
-
-		for (int i = 0; i <= 7; i++) {
-			board[1][0] = new Spaces(1, i, Board.spaces[1][0], new Pawn(true, null));
-		}
-
-		// Initialize Black heros
 		
-		board[0][0] = new Spaces(7, 0, Board.spaces[0][0], new Rook(false, null));
-		board[0][0] = new Spaces(7, 1, Board.spaces[0][1], new Knight(false, null));
-		board[0][0] = new Spaces(7, 2, Board.spaces[0][2], new Bishop(false, null));
-		board[0][0] = new Spaces(7, 3, Board.spaces[0][3], new King(false, null));
-		board[0][0] = new Spaces(7, 4, Board.spaces[0][4], new Queen(false, null));
-		board[0][0] = new Spaces(7, 5, Board.spaces[0][5], new Bishop(false, null));
-		board[0][0] = new Spaces(7, 6, Board.spaces[0][6], new Knight(false, null));
-		board[0][0] = new Spaces(7, 7, Board.spaces[0][7], new Rook(false, null));
-
-		// Initialize white Pawns
-		for (int i = 0; i <= 7; i++) {
-			board[1][0] = new Spaces(6, i, Board.spaces[1][0], new Pawn(true, null));
+		Board.spaces[0][0].setIcon(new ImageIcon(new ImageIcon("Images/"+rook1.getColor()+" "+rook1.getIcon()+".png").getImage()
+				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+		
+		Board.spaces[0][1].setIcon(new ImageIcon(new ImageIcon("Images/"+rook.getColor()+" "+rook.getIcon()+".png").getImage()
+				.getScaledInstance(75, 75, Image.SCALE_DEFAULT)));
+	
+	}
+	
+	public void createPieces() {
+		for(int i = 0; i < 2; i++) {
+			Rook r1 = new Rook(true);
+			Rook r2 = new Rook(false);
+			rook.add(r1);
+			rook.add(r2);
+			
+			Knight k1 = new Knight(true);
+			Knight k2 = new Knight(false);
+			knight.add(k1);
+			knight.add(k2);
+			
+			Bishop b1 = new Bishop(true);
+			Bishop b2 = new Bishop(false);
+			rook.add(b1);
+			rook.add(b2);
+			
+		
 		}
-
-		// Intialize remaining spaces
-
-		for (int i = 2; i < 6; i++) {
-			for (int j = 0; j < 8; j++) {
-				board[i][j] = new Spaces(i, j, Board.spaces[i][j], null);
-			}
-		}
-
 	}
 }

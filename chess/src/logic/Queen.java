@@ -2,29 +2,54 @@ package logic;
 
 import javax.swing.JLabel;
 
-public  class Queen extends Piece{
+public  class Queen {
 	
-	private JLabel Queen;
 	
-	public Queen (boolean color, JLabel Queen) {
-		super(color);
-		this.Queen = Queen;
+public String Icon;
+
+public String Color;
+
+public boolean isColor;
+
+ public Queen(boolean isColor) {
+
+	
+	Icon = "Queen";
+	
+	
+	
+	this.isColor = isColor;
+	
+	if(this.isColor == true) {
+		Color = "White";
+		
+	}else {
+		Color = "Black";
 	}
 
-	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		if( end.getPiece().isColor() == this.isColor()) {
-			return false;
-		}	
-		int x = Math.abs(start.getX() - end.getX());	
-		int y = Math.abs(start.getY()) - end.getY();
-		return x*y == 2;
-	}
+}
 
-	public JLabel getQueen() {
-		return Queen;
-	}
+public void setIcon(String icon) {
+	
+	Icon = icon;
+}
 
-	public void setQueen(JLabel queen) {
-		Queen = queen;
-	}
+public void setColor(String color) {
+	
+	Color = color;
+}
+
+public String getIcon() {
+	return Icon;
+}
+
+public String getColor() {
+	return Color;
+}
+
+
+
+public String toString() {
+	return Icon;
+}
 }

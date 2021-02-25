@@ -2,41 +2,53 @@ package logic;
 
 import javax.swing.JLabel;
 
-public  class King extends Piece{
-	private boolean castlingStatus = false;
-	private JLabel King;
-	public King(boolean color, JLabel King) {
-		super(color);
-		// TODO Auto-generated constructor stub
-	}
+public  class King {
+	public String Icon;
 
-	public boolean getCastlingStatus() {
-		return castlingStatus;
-	}
+	public String Color;
 
-	public void setCastlingStatus(boolean castlingStatus) {
-		this.castlingStatus = castlingStatus;
-	}
-	
-	private boolean validCastling(ChessBoard chessBoard, Tile start, tile end) {
+	public boolean isColor;
+
+	 public King(boolean isColor) {
+
+		
+		Icon = "King";
 		
 		
-		if (isCastlingStatus()) {
-			return false;
+		
+		this.isColor = isColor;
+		
+		if(this.isColor == true) {
+			Color = "White";
+			
+		}else {
+			Color = "Black";
 		}
-	}
-	//Available 
-	public boolean canCastle(Spaces start, Spaces end) {
-		//Validates if the king can castle with the starting and ending positions
+
 	}
 
-	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		if (end.getPiece().isColor() == this.isColor()) {
-			return false;
-		}
-		int x = Math.abs(start.getX() - end.getX());
-		int y = Math.abs(start.getY()) - end.getY();
-		return x*y == 2;
+	public void setIcon(String icon) {
+		
+		Icon = icon;
+	}
+
+	public void setColor(String color) {
+		
+		Color = color;
+	}
+
+	public String getIcon() {
+		return Icon;
+	}
+
+	public String getColor() {
+		return Color;
+	}
+
+
+
+	public String toString() {
+		return Icon;
 	}
 
 }

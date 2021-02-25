@@ -1,34 +1,77 @@
 package logic;
 
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import gui.Board;
 
 
-public class Rook extends Piece {
+public class Rook  {
 
-	private JLabel Rook;
+	public String Icon;
+	
+	public String Color;
+	
+	public boolean isColor;
 
-	public Rook(boolean color, JLabel Rook) {
-		super(color);
-		this.Rook = Rook; 
+	 public Rook(boolean isColor) {
+	
+		
+		Icon = "Rook";
+		
+		
+		
+		this.isColor = isColor;
+		
+		if(this.isColor == true) {
+			Color = "White";
+			
+		}else {
+			Color = "Black";
+		}
+	
 	}
 
-	public boolean canMove(JLabel chessBoard, Spaces start, Spaces end) {
-		if (end.getPiece().isColor() == this.isColor()) {
-			return false;
-		}	
-		int x = Math.abs(start.getX() - end.getX());
-		int y = Math.abs(start.getY()) - end.getY();
-		return x*y == 2;
+	public void setIcon(String icon) {
+		
+		Icon = icon;
+	}
+
+	public void setColor(String color) {
+		
+		Color = color;
+	}
+
+	public String getIcon() {
+		return Icon;
+	}
+
+	public String getColor() {
+		return Color;
 	}
 	
-	public JLabel getRook() {
-		return Rook;
+	
+	
+	public String toString() {
+		return Icon;
 	}
 
-	public void setRook(JLabel rook) {
-		Rook = rook;
-	}
+	
+
+
+
+	 
+
+	
+
+	 
+
+
+
+
+
+
 	
 }
